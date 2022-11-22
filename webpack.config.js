@@ -3,12 +3,34 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  stats: {
+    errorsCount: true,
+    warningsCount: true,
+    preset: 'errors-warnings',
+    timings: false,
+  },
   mode: 'development',
   entry: './src/index.js',
-  // devtool: 'inline-source-map',
   devtool: 'eval-cheap-module-source-map',
   devServer: {
+    onListening: function (devServer) {
+      if (!devServer) {
+        throw new Error('webpack-dev-server is not defined');
+      }
+
+      const port = devServer.server.address().port;
+      console.log('Listening on port:', port);
+    },
     static: './dist',
+    port: 3001,
+    host: 'local-ipv4',
+    hot: true,
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+    },
   },
   optimization: {
     runtimeChunk: 'single',
