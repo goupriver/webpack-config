@@ -1,5 +1,3 @@
-// production and development -> разобраться
-
 devDependencies:
 - @babel/core 7.19.3
 - @babel/preset-env 7.19.4
