@@ -1,4 +1,4 @@
-- описание
+- описание1
 - @babel/core 7.19.3
 - @babel/preset-env 7.19.4
 - autoprefixer 10.4.12
