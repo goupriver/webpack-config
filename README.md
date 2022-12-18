@@ -11,3 +11,4 @@
 - prettier 2.7.1
 + style-loader 3.3.1
 + webpack-dev-server 4.11.1
++
